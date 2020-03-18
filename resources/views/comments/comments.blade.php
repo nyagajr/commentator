@@ -2,28 +2,35 @@
 
 
 @section('title','comments')
-<h3>Comments section</h3>
+<div class="" style="text-align:center;padding-top: 70px;">
+<h3 ><b>COMMENT HERE</b></h3>
 @section('content')
 
 <ul>
 
-  <form action="#" method="">
-    <div class="">
-      <input type="text" name="name">
-      <button name=""> Add Name </button>
-    </div>
+  <!-- <form action="/" method="post" autocomplete="off">
 
-  </form>
 
-  <form action="#" method="">
-    <div class="">
-      <input type="text" name="name">
-      <button name=""> Add Comment </button>
-    </div>
 
-  </form>
+      <b>Name: </b> <input type="text" name="name" >
+      @csrf
+
+      <b>Comment: </b><input type="text" name="comment">
+      @csrf
+
+
+      <button > Submit </button>
+
+
+  </form> -->
+</div>
+
+
+<h3 ><b>YOUR COMMENT IS HERE</b></h3>
 @forelse( $tests as $test )
-    <li>{{ $test->name }} {{ $test->comment }}</li>
+
+    <li><b>Name:</b>{{ $test}}</li>
+    
 
   @empty
   <li>No comments here</li>

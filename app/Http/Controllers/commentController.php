@@ -12,7 +12,11 @@ class commentController extends Controller
 
 
     public function comment(){
-      return view('comments.comments');
+
+      $tests = \App\Comment::all();
+
+      
+      return view('comments.comments',compact('tests'));
     }
 
 

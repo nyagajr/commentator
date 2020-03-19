@@ -14,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('hello', 'commentController@index');
-Route::get('/', 'commentController@comment');
-Route::post('/', 'commentController@store');
+Route::get('/waa', 'commentController@comment');
 
+Route::get('/','AuthorController@index');
+Route::get('authors/create','AuthorController@create');
+Route::post('/','AuthorController@store');
 
-Route::get('/comment', 'newController@index');
-Route::get('/comment', 'newController@comment');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

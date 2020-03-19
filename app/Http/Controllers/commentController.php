@@ -15,26 +15,30 @@ class commentController extends Controller
     public function comment()
     {
 
-      $tests = [
-        'name for test', 'name 2 for test', 'name 3 for test'
-      ];
+      $tests = \App\Comment::all();
 
 
       return view('comments.comments',compact('tests'));
     }
 
-    // public function store()
-    // {
-    //
-    //   $test = new \App\Comment();
-    //
-    //
-    //   $test->name = request('name');
-    //   $test->save();
-    //
-    //
-    //   return redirect() -> back();
-    // }
+    public function create(){
+      return view('comments.create');
+    }
+
+    public function store()
+    {
+
+      $test = new \App\Comment();
+      $new = new \App\Comment();
+
+      $test->name = request('name');
+      $test->save();
+
+      $new->comment->request('comment');
+      $new->save();
+
+      return redirect() -> back();
+    }
 
 
 
